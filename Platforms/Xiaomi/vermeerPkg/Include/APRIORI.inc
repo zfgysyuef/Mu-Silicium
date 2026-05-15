@@ -36,7 +36,6 @@ APRIORI DXE {
   INF Binaries/vermeer/QcomPkg/Drivers/TLMMDxe/TLMMDxe.inf
   INF Binaries/vermeer/QcomPkg/Drivers/I2CDxe/I2CDxe.inf
   INF Binaries/vermeer/QcomPkg/Drivers/SPMIDxe/SPMIDxe.inf
-  INF Binaries/vermeer/MdeModulePkg/Universal/FvSimpleFileSystemDxe/FvSimpleFileSystemDxe.inf
 
   INF MdeModulePkg/Universal/ResetSystemRuntimeDxe/ResetSystemRuntimeDxe.inf
   INF MdeModulePkg/Universal/Disk/DiskIoDxe/DiskIoDxe.inf
