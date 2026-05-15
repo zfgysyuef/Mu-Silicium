@@ -31,7 +31,7 @@ gMemoryDescriptor[] = {
   {"DXE Heap",           0xBAB00000, 0x0D1C0000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK_XN},
   {"CPUCP FW",           0xD8140000, 0x001C0000, AddMem, SYS_MEM, SYS_MEM_CAP, Reserv, UNCACHED_UNBUFFERED_XN},
   {"QTEE",               0xD8300000, 0x00500000, AddMem, MEM_RES, UNCACHEABLE, Reserv, UNCACHED_UNBUFFERED_XN},
-  {"TZApps Reserved",    0xD8800000, 0x07400000, AddDynamicMem, MEM_RES, UNCACHEABLE, Reserv, UNCACHED_UNBUFFERED_XN},
+  {"TZApps Reserved",    0xD8800000, 0x07400000, AddMem, MEM_RES, UNCACHEABLE, Reserv, UNCACHED_UNBUFFERED_XN},
 
   // Other Memory Regions
   {"IMEM Base",          0x14680000, 0x0002A000, NoHob,  MMAP_IO, INITIALIZED, Conv,   NS_DEVICE},
