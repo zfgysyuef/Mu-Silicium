@@ -24,7 +24,6 @@
   INF EmbeddedPkg/RealTimeClockRuntimeDxe/RealTimeClockRuntimeDxe.inf
   INF EmbeddedPkg/MetronomeDxe/MetronomeDxe.inf
   INF MdeModulePkg/Universal/HiiDatabaseDxe/HiiDatabaseDxe.inf
-  INF MdeModulePkg/Universal/FvSimpleFileSystemDxe/FvSimpleFileSystemDxe.inf
 
   INF Binaries/vermeer/QcomPkg/Drivers/FontDxe/FontDxe.inf
   INF Binaries/vermeer/QcomPkg/Drivers/QcomWDogDxe/QcomWDogDxe.inf
