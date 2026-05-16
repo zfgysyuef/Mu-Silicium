@@ -9,7 +9,7 @@ gMemoryDescriptor[] = {
 
     /* DDR Regions */
     /* DDR Bank 0 Start */
-    {"Hypervisor",        0x80000000, 0x00600000, AddMem, SYS_MEM, SYS_MEM_CAP, Reserv, NS_DEVICE},
+    {"Hypervisor",        0x80000000, 0x00600000, AddMem, SYS_MEM, SYS_MEM_CAP, Reserv, WRITE_BACK_XN},  // 修复：NS_DEVICE → WRITE_BACK_XN
     {"Axon DMA",          0x80600000, 0x00100000, AddMem, SYS_MEM, SYS_MEM_CAP, Reserv, WRITE_BACK_XN},
     {"RAM Partition",     0x80700000, 0x00100000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK_XN},
     {"AOP",               0x80800000, 0x00060000, AddMem, MEM_RES, UNCACHEABLE, Reserv, UNCACHED_UNBUFFERED_XN},
@@ -46,13 +46,13 @@ gMemoryDescriptor[] = {
     /* Carveout Region (0xBBB00000 -> 0xC0000000, size 0x04500000) */
     /* DDR Bank 2 Start */
     {"RAM Partition",     0xC0000000, 0x01800000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK_XN},
-    {"TZApps",            0xC1800000, 0x03900000, NoHob,  SYS_MEM, SYS_MEM_CAP, Reserv, NS_DEVICE},
+    // {"TZApps",            0xC1800000, 0x03900000, NoHob,  SYS_MEM, SYS_MEM_CAP, Reserv, NS_DEVICE},  // 删除：地址/属性错误，与后续TZApps Reserved冲突
     {"DBI Dump",          0xC5100000, 0x01100000, NoHob,  MMAP_IO, INITIALIZED, Conv,   UNCACHED_UNBUFFERED_XN},
     {"RAM Partition",     0xC6200000, 0x07E00000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK_XN},
     {"UEFI FD",           0xCE000000, 0x02000000, AddMem, SYS_MEM, SYS_MEM_CAP, BsData, WRITE_BACK},
     {"RAM Partition",     0xD0000000, 0x08800000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK_XN},
-    {"Removed Mem",       0xD8800000, 0x01800000, AddMem, SYS_MEM, SYS_MEM_CAP, Reserv, UNCACHED_UNBUFFERED_XN},
-    {"TZApps Reserved",   0xDA000000, 0x03900000, HobOnlyNoCacheSetting, MEM_RES, UNCACHEABLE, Reserv, UNCACHED_UNBUFFERED_XN},
+    // {"Removed Mem",       0xD8800000, 0x01800000, AddMem, SYS_MEM, SYS_MEM_CAP, Reserv, UNCACHED_UNBUFFERED_XN},  // 可选删除：可开机表中无此项
+    {"TZApps Reserved",   0xDA000000, 0x03900000, AddMem, MEM_RES, UNCACHEABLE, Reserv, UNCACHED_UNBUFFERED_XN},  // 修复：HobOnlyNoCacheSetting → AddMem
     {"RAM Partition",     0xDD900000, 0x03700000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK_XN},
     {"Display Reserved",  0xE1000000, 0x02400000, AddMem, MEM_RES, SYS_MEM_CAP, Reserv, WRITE_THROUGH_XN},
     {"Apps Hob",          0xE3400000, 0x00001000, AddMem, MEM_RES, UNCACHEABLE, Reserv, UNCACHED_UNBUFFERED_XN},
@@ -97,9 +97,7 @@ gMemoryDescriptor[] = {
     {"PCIE_3A_AHB",       0x01C10000, 0x00008000, AddDev, MMAP_IO, UNCACHEABLE, MmIO,   NS_DEVICE},
     {"PCIE_3B_AHB",       0x01C08000, 0x00008000, AddDev, MMAP_IO, UNCACHEABLE, MmIO,   NS_DEVICE},
     {"PCIE_4_AHB",        0x01C00000, 0x00008000, AddDev, MMAP_IO, UNCACHEABLE, MmIO,   NS_DEVICE},
-
-    /* Terminator for MMU */
-    {"Terminator", 0, 0, 0, 0, 0, 0, 0}};
+};
 
 VOID
 GetMemoryMap (
