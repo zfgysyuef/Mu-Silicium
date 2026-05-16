@@ -71,6 +71,8 @@
   gQcomPkgTokenSpaceGuid.PcdSchedulerInterfaceAddr|0xA703A948
   gQcomPkgTokenSpaceGuid.PcdDtbExtensionAddr|0xA703A0C8
 
+  gEfiMdeModulePkgTokenSpaceGuid.PcdVariableStoreBaseAddress|0xA7600000
+  gEfiMdeModulePkgTokenSpaceGuid.PcdVariableStoreSize|0x10000
   #
   # Storage
   #
