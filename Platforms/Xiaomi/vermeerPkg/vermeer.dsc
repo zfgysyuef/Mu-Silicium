@@ -1,7 +1,5 @@
 ##
-
-#  Copyright (c) 2011 - 2022, ARM Limited. All rights reserved.
-
+#
 #  Copyright (c) 2011 - 2022, ARM Limited. All rights reserved.
 #  Copyright (c) 2014, Linaro Limited. All rights reserved.
 #  Copyright (c) 2015 - 2020, Intel Corporation. All rights reserved.
@@ -52,10 +50,10 @@
   # SMBIOS
   #
   gSiliciumPkgTokenSpaceGuid.PcdSmbiosSystemManufacturer|"Xiaomi"
-  gSiliciumPkgTokenSpaceGuid.PcdSmbiosSystemModel|"Redme K70"
+  gSiliciumPkgTokenSpaceGuid.PcdSmbiosSystemModel|"Redmi K70"
   gSiliciumPkgTokenSpaceGuid.PcdSmbiosSystemRetailModel|"vermeer"
-  gSiliciumPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"Redme_K70_nuwa"
-  gSiliciumPkgTokenSpaceGuid.PcdSmbiosBoardModel|"Redme K70"
+  gSiliciumPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"Redmi_K70_vermeer"
+  gSiliciumPkgTokenSpaceGuid.PcdSmbiosBoardModel|"Redmi K70"
 
   #
   # Simple Frame Buffer
